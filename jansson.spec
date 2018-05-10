@@ -6,7 +6,7 @@
 #
 Name     : jansson
 Version  : 2.11
-Release  : 1
+Release  : 2
 URL      : http://www.digip.org/jansson/releases/jansson-2.11.tar.gz
 Source0  : http://www.digip.org/jansson/releases/jansson-2.11.tar.gz
 Source99 : http://www.digip.org/jansson/releases/jansson-2.11.tar.gz.asc
