@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD3657D24D058434C (petri@digip.org)
 #
 Name     : jansson
-Version  : 2.12
-Release  : 5
-URL      : http://www.digip.org/jansson/releases/jansson-2.12.tar.gz
-Source0  : http://www.digip.org/jansson/releases/jansson-2.12.tar.gz
-Source1  : http://www.digip.org/jansson/releases/jansson-2.12.tar.gz.asc
+Version  : 2.13.1
+Release  : 6
+URL      : https://www.digip.org/jansson/releases/jansson-2.13.1.tar.gz
+Source0  : https://www.digip.org/jansson/releases/jansson-2.13.1.tar.gz
+Source1  : https://www.digip.org/jansson/releases/jansson-2.13.1.tar.gz.asc
 Summary  : Library for encoding, decoding and manipulating JSON data
 Group    : Development/Tools
 License  : MIT
@@ -50,23 +50,23 @@ license components for the jansson package.
 
 
 %prep
-%setup -q -n jansson-2.12
-cd %{_builddir}/jansson-2.12
+%setup -q -n jansson-2.13.1
+cd %{_builddir}/jansson-2.13.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1604098061
+export SOURCE_DATE_EPOCH=1631737409
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -78,10 +78,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1604098061
+export SOURCE_DATE_EPOCH=1631737409
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/jansson
-cp %{_builddir}/jansson-2.12/LICENSE %{buildroot}/usr/share/package-licenses/jansson/04734befe9a48b09072cbdfaa17a0c5d98d67f56
+cp %{_builddir}/jansson-2.13.1/LICENSE %{buildroot}/usr/share/package-licenses/jansson/fa82ae23fff791a399cb3c72b59fe7199e989652
 %make_install
 
 %files
@@ -97,8 +97,8 @@ cp %{_builddir}/jansson-2.12/LICENSE %{buildroot}/usr/share/package-licenses/jan
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libjansson.so.4
-/usr/lib64/libjansson.so.4.11.1
+/usr/lib64/libjansson.so.4.13.0
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/jansson/04734befe9a48b09072cbdfaa17a0c5d98d67f56
+/usr/share/package-licenses/jansson/fa82ae23fff791a399cb3c72b59fe7199e989652
