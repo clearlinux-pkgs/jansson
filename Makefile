@@ -1,5 +1,5 @@
 PKG_NAME := jansson
-URL = https://www.digip.org/jansson/releases/jansson-2.13.1.tar.gz
+URL = https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
